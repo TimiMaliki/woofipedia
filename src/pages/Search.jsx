@@ -17,8 +17,8 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
   // https://api.thecatapi.com/v1/images/search?breed_ids={breed.id}
   // https://api.thecatapi.com/v1/breeds */}
 
-    <div className="w-full h-full">
-      <div className="lg:hidden rounded-lg grid grid-cols-2 gap-2">
+    <div className="w-full h-full p-0 lg:p-2">
+      <div className="lg:hidden rounded-lg grid grid-cols-2 p-0 lg:p-10 gap-2">
         <img src={husky} alt="" className="rounded-lg" />
         <div className="grid">
           <img src={kangal} alt="" className="rounded-lg" />
@@ -27,7 +27,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
       </div>
 
       <div className="mt-4 grid lg:grid-cols-2">
-        <div className="input">
+        <div className="input p-0 lg:p-20">
         <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -49,7 +49,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
               </form>
         </div>
 
-        <div className="hidden rounded-lg lg:grid lg:grid-cols-2 p-10 gap-2">
+        <div className="hidden rounded-lg lg:grid lg:grid-cols-2 p-0 lg:p-10 gap-2">
           <img src={husky} alt="" className="rounded-lg" />
           <div className="grid">
             <img src={kangal} alt="" className="rounded-lg" style={{width:"100%" , height:"auto" , objectFit:"fill"}} />
