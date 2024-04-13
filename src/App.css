@@ -14,10 +14,10 @@ nav {
 
 nav .title {
   font-size: 1.5rem;
-  margin: 1rem;
+  /* margin: 1rem;
   font-weight: bold;
-  text-decoration: none;
-  color: white;
+  text-decoration: none; */
+  color: black;
 }
 
 nav ul {
@@ -64,7 +64,12 @@ nav .menu span {
     display: flex;
     cursor: pointer;
   }
-
+  nav .menu span {
+    /* width: 100%; */
+     transform: translateX(-30px);
+  }
+  
+  
   nav {
     flex-direction: column;
     align-items: flex-start;
@@ -76,6 +81,11 @@ nav .menu span {
     /* width: 100%; */
     margin-top: 2rem;
     margin-bottom: 0.25rem;
+  }
+
+  nav .title {
+    margin-right: 18rem;
+    color: black;
   }
 
   nav ul.open {

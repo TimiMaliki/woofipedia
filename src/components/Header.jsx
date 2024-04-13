@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <nav className="w-full bg-white text-black justify-between text-center items-center p-8 sticky">
       <Link to="/">
-        <h1 className="text-3xl font-extrabold">Maliki</h1>
+        <h1 className="text-3xl font-extrabold text-center title">Maliki</h1>
       </Link>
 
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
