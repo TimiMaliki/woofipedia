@@ -63,7 +63,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
       <div className="w-full h-full mt-6 p-6 mb-10">
       
 
-        <div className="cards-container mt-4 w-full grid grid-cols-2 lg:grid-cols-3  lg:gap-4">
+        <div className="cards-container mt-4 w-full grid grid-cols-1 lg:grid-cols-3">
           {dogs.map((dog) => (
             <div className="card w-full h-full shadow-lg border border-blue-900 rounded" key={dog?.id}>
               <div className="img">
