@@ -74,7 +74,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
               </div>
               <div className="description"></div>
             </div>
-          ))}
+          ))} 
         </div>
       </div>
       </div>
