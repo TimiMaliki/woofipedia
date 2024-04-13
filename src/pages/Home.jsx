@@ -7,7 +7,7 @@ const Home = () => {
     <main className='w-full h-full'>
     <div className="grid grid-cols-1 lg:grid-cols-2">
 
-   <div className="dogsIntroText mt-20 p-8">
+   <div className="dogsIntroText lg:mt-20 p-8">
     <h1 className='text-5xl font-extrabold mb-4 flex justify-center'>
     Woofipedia: Explore Dog Breeds API
     </h1>
