@@ -26,7 +26,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
         </div>
       </div>
 
-      <div className="mt-4 grid lg:grid-cols-2 p-2">
+      <div className="mt-4 grid lg:grid-cols-2">
         <div className="input p-20">
         <form onSubmit={handleSubmit}>
             <input

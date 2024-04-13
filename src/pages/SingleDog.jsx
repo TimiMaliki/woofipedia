@@ -26,7 +26,7 @@ const SingleDog = () => {
 
   //   card w-[300px] lg:w-full h-full border border-blue-300 rounded-lg shadow-lg mt-4
   return (
-    <div className="w-full h-full p-24 lg:p-44">
+    <div className="w-full h-full lg:p-44">
       {dog.map((dog) => (
         <div className="grid lg:grid-cols-2" key={dog.id}>
           <div className="img rounded-x">
@@ -60,10 +60,8 @@ const SingleDog = () => {
               </h3>
             </div>
             <div className="temprament flex justify-center gap-2 lg:justify-end  mb-10">
-              <h3 className="text-xl lg:text-2xl line-break font-semibold">
-                temperament  : 
-              </h3>
-              <p className="text-sm lg:text-lg font-semibold">{dog.temperament}</p>
+            <h3 className="text-xl lg:text-2xl font-semibold p-2">    temperament  <p className="hidden  lg:block">:</p>    </h3>  
+              <p className="text-sm lg:text-lg font-semibold"> {dog.temperament}</p>
             </div>
             <div className="weight flex justify-center lg:justify-end  mb-10">
               <h3 className="text-xl lg:text-2xl font-semibold p-2">
