@@ -66,17 +66,11 @@ export const Dogs = () => {
         isLoading={isLoading}
       />
       <div className="w-full h-full mt-6 p-6 mb-10">
-        {!search  ?
-         <h1 className="text-3xl font-bold text-center mb-10">
-         Sorry No Results
-       </h1> :
+        <h1 className="text-3xl font-bold text-center mb-10">
+          Know More About Your Favourite Dogs
+        </h1>
 
-<h1 className="text-3xl font-bold text-center mb-10">Search not found </h1> 
-
-        }
-       
-
-        <div className="cards-container mt-4 w-full grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4">
+        <div className="cards-container mt-4 w-full h-full grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4">
           {!search ? (
             dogs.map((dog) => (
               <Link to={`${dog.name}`} key={dog.id}>

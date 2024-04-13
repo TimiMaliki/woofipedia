@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-<footer className="w-full bg-black justify-between text-center items-center p-8">
-    <div className="w-full ">
+<footer className="w-full h-full bg-black justify-between text-center items-center p-28">
+    <div className="w-full h-full ">
         <div className="flex items-center justify-between">
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <Link to={'*'}>
