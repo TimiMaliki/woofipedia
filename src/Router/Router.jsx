@@ -5,15 +5,17 @@ import Home from "../pages/Home";
 import Search, { Dogs } from "../pages/Dogs";
 import SingleDog from "../pages/SingleDog";
 import SignIn from "../pages/SignIn"
+import NotFound from "../pages/NotFound";
 
 const Router = () => {
   return (
     <Routes>
       <Route path="" element={<MainLayout />}>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/sign" element={<SignIn/>} />
         <Route path="/dogs" element={<Dogs/>} />
-        <Route path="/:name" element={<SingleDog/>} />
+        <Route path="/dogs/:name" element={<SingleDog/>} />
+        <Route path="*" element={<NotFound/>} />
       </Route>
     </Routes>
   );

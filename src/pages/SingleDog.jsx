@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // import SearchBtn from "../component/SearchBtn";
 
 const SingleDog = () => {
   const [dog, setDog] = useState([]);
   const { name } = useParams();
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch(`https://api.thedogapi.com/v1/breeds/search?q=${name}`)
