@@ -13,7 +13,7 @@ export const Dogs = () => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://api.thedogapi.com/v1/breeds?limit=30&api_key=live_kgmdlIAmLqwoovvFLwnou0KI62vpzYC3MyTODQZgi1mTQ97mINVT6xnZsDMUF6EN`
+      `https://api.thedogapi.com/v1/breeds?limit=100&api_key=live_kgmdlIAmLqwoovvFLwnou0KI62vpzYC3MyTODQZgi1mTQ97mINVT6xnZsDMUF6EN`
     )
       .then((res) => {
         return res.json();
@@ -59,22 +59,21 @@ export const Dogs = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 5,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
+      items: 1,
     },
   };
-  
 
   // {{endpoint}}v1/images/search?breed_ids=beng&include_breeds=true
   // https://api.thecatapi.com/v1/images/search?breed_ids={breed.id}
@@ -144,98 +143,63 @@ export const Dogs = () => {
           )}
         </div>
 
-
-
         {/* multiple-carousel */}
 
-      
-          <div className="cards-container  lg:hidden mt-4 w-full h-full" >
-          <Carousel
-          responsive={responsive} 
-          infinite={true}
-          >
-          {!search ? (
-            dogs.map((dog) => (
-              <Link to={`${dog.name}`} key={dog.id}>
-                <div
-                  className="card w-full h-full border border-blue-300 rounded shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
-                  key={dog.id}
-                >
-                  <img
-                    src={dog.image.url}
-                    alt={dog.name}
-                    className="rounded w-full object-cover h-96"
-                  />
-                  <div className="w-full h-full mt-4 p-2">
-                    <div className="name flex justify-center">
-                      <h3 className="text-xl font-semibold p-2 ">
-                        Name: {dog.name}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))
-          ) : (
-            <>
-              {dogs.map((dog) => (
+        <div className="cards-container  lg:hidden mt-4 w-full h-full">
+          <Carousel responsive={responsive} infinite={true}>
+            {!search ? (
+              dogs.map((dog) => (
                 <Link to={`${dog.name}`} key={dog.id}>
                   <div
                     className="card w-full h-full border border-blue-300 rounded shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
                     key={dog.id}
                   >
-                    <div className="img w-full h-full">
-                      <img
-                        src={`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`}
-                        alt={dog.name}
-                      />
-                      <div className="w-full h-full mt-4 text-center">
-                        <div className="name flex justify-center">
-                          <h3 className="text-xl font-semibold p-2">
-                            Name : {dog.name}
-                          </h3>
-                        </div>
+                    <img
+                      src={dog.image.url}
+                      alt={dog.name}
+                      className="rounded w-full object-cover h-96"
+                    />
+                    <div className="w-full h-full mt-4 p-2">
+                      <div className="name flex justify-center">
+                        <h3 className="text-xl font-semibold p-2 ">
+                          Name: {dog.name}
+                        </h3>
                       </div>
                     </div>
                   </div>
                 </Link>
-              ))}
-            </>
-          )}
-            </Carousel> 
+              ))
+            ) : (
+              <>
+                {dogs.map((dog) => (
+                  <Link to={`${dog.name}`} key={dog.id}>
+                    <div
+                      className="card w-full h-full border border-blue-300 rounded shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
+                      key={dog.id}
+                    >
+                      <div className="img w-full h-full">
+                        <img
+                          src={`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`}
+                          alt={dog.name}
+                        />
+                        <div className="w-full h-full mt-4 text-center">
+                          <div className="name flex justify-center">
+                            <h3 className="text-xl font-semibold p-2">
+                              Name : {dog.name}
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </>
+            )}
+          </Carousel>
         </div>
-      
-
       </div>
     </div>
   );
 };
 
 export default Dogs;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
