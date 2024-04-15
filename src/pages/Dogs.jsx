@@ -81,6 +81,7 @@ export const Dogs = () => {
 
   return (
     <div className="w-full h-full p-2">
+      
       <Search
         text={text}
         setText={setText}
@@ -146,7 +147,6 @@ export const Dogs = () => {
         {/* multiple-carousel */}
 
         <div className="cards-container  lg:hidden mt-4 w-full h-full">
-          <Carousel responsive={responsive} infinite={true}>
             {!search ? (
               dogs.map((dog) => (
                 <Link to={`${dog.name}`} key={dog.id}>
@@ -169,8 +169,9 @@ export const Dogs = () => {
                   </div>
                 </Link>
               ))
-            ) : (
-              <>
+            )   : (
+             
+               <Carousel responsive={responsive} infinite={true}>
                 {dogs.map((dog) => (
                   <Link to={`${dog.name}`} key={dog.id}>
                     <div
@@ -193,9 +194,8 @@ export const Dogs = () => {
                     </div>
                   </Link>
                 ))}
-              </>
+                </Carousel>
             )}
-          </Carousel>
         </div>
       </div>
     </div>

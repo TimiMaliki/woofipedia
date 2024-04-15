@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import husky from "../assets/husky.jpg";
 import kangal from "../assets/kangal.jpg";
 import shepherd from "../assets/shepherd.jpg";
+
 
 const Search = ({text , setText , handleSubmit , isLoading}) => {
 
@@ -69,13 +72,10 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
               <div className="img">
                 <img src={dog?.url} alt="" />
               </div>
-              <div className="name">
-                <h3></h3>
-              </div>
-              <div className="description"></div>
             </div>
           ))} 
         </div>
+      
       </div>
       </div>
     </div>
