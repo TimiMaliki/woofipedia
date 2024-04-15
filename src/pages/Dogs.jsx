@@ -151,7 +151,7 @@ export const Dogs = () => {
               dogs.map((dog) => (
                 <Link to={`${dog.name}`} key={dog.id}>
                   <div
-                    className="card w-full h-full border border-blue-300 rounded shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
+                    className="card w-full h-full border border-blue-300 rounded mb-4  lg:mb-0 shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
                     key={dog.id}
                   >
                     <img
