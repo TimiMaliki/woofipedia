@@ -145,13 +145,12 @@ export const Dogs = () => {
         </div>
 
         {/* multiple-carousel */}
-
         <div className="cards-container  lg:hidden mt-4 w-full h-full">
-            {!search ? (
-              dogs.map((dog) => (
+           
+            {!search ?  (dogs.map((dog) => (
                 <Link to={`${dog.name}`} key={dog.id}>
                   <div
-                    className="card w-full h-full border border-blue-300 rounded mb-4  lg:mb-0 shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
+                    className="card w-full h-full border border-blue-300  rounded mb-4  lg:mb-0 shadow-lg cursor-pointer hover:border-blue-900 hover:bg-blue-300 hover:text-white transition-all  duration-200 "
                     key={dog.id}
                   >
                     <img
@@ -169,7 +168,7 @@ export const Dogs = () => {
                   </div>
                 </Link>
               ))
-            )   : (
+            )  : (
              
                <Carousel responsive={responsive} infinite={true}>
                 {dogs.map((dog) => (
