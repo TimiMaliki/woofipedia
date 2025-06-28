@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React, {useState } from "react";
 import husky from "../assets/husky.jpg";
 import kangal from "../assets/kangal.jpg";
 import shepherd from "../assets/shepherd.jpg";
@@ -9,9 +7,6 @@ import shepherd from "../assets/shepherd.jpg";
 const Search = ({text , setText , handleSubmit , isLoading}) => {
 
     const [dogs, setDogs] = useState([]);
-  
- 
-    
   return (
     <div>
   
@@ -35,7 +30,7 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
             <input
               type="text"
               className="w-full h-10  text-xl bg-white p-8 border border-blue-700 outline-none rounded-lg shadow-lg mb-8"
-              placeholder="Enter a breed"
+              placeholder="Enter a breed e.g Husky"
               required
               value={text}
               onChange={(e) => setText(e.target.value)}
@@ -45,8 +40,8 @@ const Search = ({text , setText , handleSubmit , isLoading}) => {
                 onClick={handleSubmit}
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
               >
-                <span className="relative w-44 px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black rounded-lg  group-hover:bg-opacity-0">
-                  {isLoading ? "loading..." : "search"}
+                <span className="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black rounded-lg  group-hover:bg-opacity-0">
+                  {isLoading ? "loading,wait a min to fetch data..." : "search"}
                 </span>
               </button>
               </form>
