@@ -1,52 +1,97 @@
-import React from 'react';
-import Dog from "../assets/blackDog.jpeg";
-import SearchBtn from '../components/SearchBtn';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SearchBtn from "../components/SearchBtn";
 
 const Home = () => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    // Fetch random dog images for hero preview
+    fetch("https://dog.ceo/api/breeds/image/random/6")
+      .then((res) => res.json())
+      .then((data) => setImages(data.message))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
-    <main className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-100 flex items-center justify-center px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl w-full py-12">
-        {/* Text Section */}
-        <div className="flex flex-col justify-center space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-gray-800 text-center lg:text-left">
-            Woofipedia: <br className="hidden sm:inline" />
-            <span className="text-indigo-600">The Visual Dog Gallery</span>
+    <main className="w-full min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100 px-4 py-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+
+        {/* LEFT CONTENT */}
+        <div className="space-y-6 text-center lg:text-left">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-black leading-tight">
+            Discover Dogs <br />
+            <span className="text-blue-600">Visually & Instantly</span>
           </h1>
 
-          <p className="text-lg text-gray-700 text-center lg:text-left">
-            Welcome to <strong>Woofipedia</strong>, the ultimate visual destination for dog lovers! We've simplified your search to bring you the most stunning, high-resolution imagery of every dog breed imaginable.
+          <p className="text-lg text-black max-w-xl mx-auto lg:mx-0">
+            Explore hundreds of dog breeds through real images. 
+            Search, browse, and dive into collections powered by a live API.
           </p>
 
-          <p className="text-lg text-gray-700 text-center lg:text-left">
-            Powered by the Dog CEO API, our platform allows you to browse through hundreds of breeds and instantly generate random galleries. Whether you want to see a dozens of <strong>Hounds</strong>, <strong>Poodles</strong>, or <strong>Retrievers</strong>, Woofipedia serves up the cutest pups at the click of a button.
-          </p>
-
-          <p className="text-lg text-gray-700 text-center lg:text-left">
-            Start your tail-wagging adventure today. Simply hit search, pick a breed, and get lost in a world of endless dog photos!
-          </p>
-
-          <div className="pt-4 flex justify-center lg:justify-start">
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
             <Link to="/dogs">
               <SearchBtn />
             </Link>
+
+            <button
+              onClick={() => window.scrollTo({ top: 700, behavior: "smooth" })}
+              className="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            >
+              Browse Preview ↓
+            </button>
           </div>
         </div>
 
-        {/* Image Section */}
-        <div className="relative group">
-          {/* Decorative Background Element */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-          
-          <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <img
-              src={Dog}
-              alt="A beautiful black dog"
-              className="object-cover w-full h-[500px] lg:h-full hover:scale-105 transition-transform duration-500 ease-in-out"
-            />
-          </div>
+        {/* RIGHT IMAGE GRID */}
+        <div className="grid grid-cols-2 gap-4">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`rounded-2xl overflow-hidden shadow-md ${
+                index === 0 ? "col-span-2 h-60" : "h-40"
+              }`}
+            >
+              <img
+                src={img}
+                alt="dog"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* FEATURE SECTION */}
+      <section className="mt-20 max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-black mb-10">
+          Why Woofipedia?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-xl bg-white shadow-md">
+            <h3 className="text-xl font-semibold mb-2">Smart Search</h3>
+            <p className="text-black">
+              Quickly find any breed with instant filtering.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-xl bg-white shadow-md">
+            <h3 className="text-xl font-semibold mb-2">Real Images</h3>
+            <p className="text-black">
+              See real dog images fetched live from the API.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-xl bg-white shadow-md">
+            <h3 className="text-xl font-semibold mb-2">Fast & Responsive</h3>
+            <p className="text-black">
+              Built for speed and smooth browsing on all devices.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
