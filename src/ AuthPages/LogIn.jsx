@@ -37,7 +37,7 @@ const Signin = () => {
         {/* Right Form */}
         <div className="p-10 md:p-16">
           <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
-            Welcome Back 👋
+            Welcome Back Dog Lovers
           </h2>
           <p className="text-gray-500 mb-6">
             Log in to continue exploring dog breeds on Woofipedia.

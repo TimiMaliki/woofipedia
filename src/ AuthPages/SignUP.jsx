@@ -34,7 +34,7 @@ const Signup = () => {
         {/* Right Form */}
         <div className="p-10 md:p-16">
           <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
-            Join Woofipedia 🐶
+            Join Woofipedia 
           </h2>
           <p className="text-gray-500 mb-6">
             Create an account to explore and save your favorite dog breeds.
